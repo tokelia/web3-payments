@@ -1,5 +1,5 @@
 import { ethers } from 'ethers'
-import Exchanges from '@depay/web3-exchanges'
+import Exchanges from '@tokelia/web3-exchanges'
 import { mock } from '@depay/web3-mock'
 
 let mockPair = ({ blockchain, provider, pair, params })=>{

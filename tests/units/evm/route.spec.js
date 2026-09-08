@@ -1,14 +1,14 @@
-import Blockchains from '@depay/web3-blockchains'
+import Blockchains from '@tokelia/web3-blockchains'
 import fetchMock from 'fetch-mock'
 import routers from 'src/routers'
-import Token from '@depay/web3-tokens'
+import Token from '@tokelia/web3-tokens'
 import { ethers } from 'ethers'
-import { getWallets } from '@depay/web3-wallets'
+import { getWallets } from '@tokelia/web3-wallets'
 import { mock, resetMocks, anything } from '@depay/web3-mock'
 import { mockBestRoute, mockAllRoutes } from 'tests/mocks/api'
 import { mockBasics, mockDecimals, mockBalance, mockAllowance } from 'tests/mocks/tokens'
 import { mockPair, mockAmounts } from 'tests/mocks/UniswapV2'
-import { resetCache, getProvider } from '@depay/web3-client'
+import { resetCache, getProvider } from '@tokelia/web3-client'
 import { route } from 'src'
 
 describe('route', ()=> {

@@ -1,8 +1,8 @@
-import Blockchains from '@depay/web3-blockchains'
+import Blockchains from '@tokelia/web3-blockchains'
 import routers from './routers'
 import { ComputeBudgetProgram, BN, PublicKey, Buffer, TransactionMessage, VersionedTransaction, TransactionInstruction, SystemProgram, Keypair, struct, u64, u128, bool, publicKey } from '@depay/solana-web3.js'
-import { request, getProvider } from '@depay/web3-client'
-import Token from '@depay/web3-tokens'
+import { request, getProvider } from '@tokelia/web3-client'
+import Token from '@tokelia/web3-tokens'
 
 const createComputeInstruction = async ({ paymentRoute })=> {
 
