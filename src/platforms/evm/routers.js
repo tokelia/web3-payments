@@ -42,6 +42,11 @@ export default {
     api: API
   },
 
+  basesepolia: {
+    address: '0x529f64d80b8AfA7E6bb522ecC8978Ff9220d4248',
+    api: API
+  },
+
   worldchain: {
     address: '0x886eb82a7e5E7310F66A0E83748662A17E391eb0',
     api: API

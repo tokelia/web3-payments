@@ -1,21 +1,21 @@
 /*#if _EVM
 
-import Exchanges from '@depay/web3-exchanges-evm'
-import Token from '@depay/web3-tokens-evm'
+import Exchanges from '@tokelia/web3-exchanges'
+import Token from '@tokelia/web3-tokens'
 
 /*#elif _SVM
 
-import Exchanges from '@depay/web3-exchanges-svm'
-import Token from '@depay/web3-tokens-svm'
+import Exchanges from '@tokelia/web3-exchanges'
+import Token from '@tokelia/web3-tokens'
 
 //#else */
 
-import Exchanges from '@depay/web3-exchanges'
-import Token from '@depay/web3-tokens'
+import Exchanges from '@tokelia/web3-exchanges'
+import Token from '@tokelia/web3-tokens'
 
 //#endif
 
-import Blockchains from '@depay/web3-blockchains'
+import Blockchains from '@tokelia/web3-blockchains'
 import config from './config'
 import routers from './routers'
 import { ethers } from 'ethers'
@@ -175,6 +175,10 @@ async function remoteRouteToPaymentRoute({ remoteRoute, from, accept }) {
 function route({ accept, from, allow, deny, best, blacklist, whitelist }) {
   ['fee', 'fee2', 'protocolFee'].forEach((attribute)=>feeSanityCheck(accept, attribute))
 
+  if(!config.endpoints.routesBest || !config.endpoints.routesAll) {
+    return Promise.reject(new Error('No routes endpoint configured'))
+  }
+
   return new Promise(async (resolveAll, rejectAll)=>{
 
     const fail = (text, error)=>{
@@ -236,7 +240,7 @@ function route({ accept, from, allow, deny, best, blacklist, whitelist }) {
     // Always load all routes regardless of best route outcome
     try {
       const allResponse = await fetchWithTimeout(
-        `https://public.depay.com/routes/all`,
+        config.endpoints.routesAll,
         {
           method: 'POST',
           headers: { "Content-Type": "application/json" },

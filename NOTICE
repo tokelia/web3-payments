@@ -7,3 +7,5 @@ licencia MIT (ver LICENSE). Mantenido por Tokelia como parte de tokelia-pay.
 Cambios respecto a upstream:
 - Paquete renombrado a @tokelia/web3-payments; un solo bundle compilado para EVM.
 - Dependencias @depay/web3-* sustituidas por @tokelia/web3-*.
+- basesepolia en supported y en routers (router propio 0x529f…4248).
+- config.endpoints.routesBest y routesAll sin valor por defecto; route() exige ambos.

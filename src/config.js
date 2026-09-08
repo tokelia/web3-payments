@@ -1,8 +1,8 @@
 const config = {
   endpoints: {
-    routesBest: 'https://public.depay.com/routes/best'
+    routesBest: undefined,
+    routesAll: undefined,
   }
 }
 
 export default config
-
