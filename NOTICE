@@ -9,3 +9,4 @@ Cambios respecto a upstream:
 - Dependencias @depay/web3-* sustituidas por @tokelia/web3-*.
 - basesepolia en supported y en routers (router propio 0x529f…4248).
 - config.endpoints.routesBest y routesAll sin valor por defecto; route() exige ambos.
+- Globales UMD de las dependencias @tokelia/web3-* (rollup.globals.js).
